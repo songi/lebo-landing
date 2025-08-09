@@ -82,6 +82,18 @@ function HeroContent({ onStartLearning }: { onStartLearning: () => void }) {
         REVOLUTIONÄRE_KI_TECHNOLOGIE.exe
       </Badge> */}
       
+      {/* ASCII Rocket */}
+      <div className="mb-8 text-center">
+        <pre className="text-green-400 text-xs text-left md:text-sm leading-tight gradient-text inline-block ">
+{`  ██╗     ███████╗██████╗  ██████╗ 
+  ██║     ██╔════╝██╔══██╗██╔═══██╗
+  ██║     █████╗  ██████╔╝██║   ██║
+  ██║     ██╔══╝  ██╔══██╗██║   ██║
+  ███████╗███████╗██████╔╝╚██████╔╝
+  ╚══════╝╚══════╝╚═════╝  ╚═════╝ `}
+        </pre>
+      </div>
+      
       <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight mb-6 gradient-text terminal-typing font-mono leading-tight break-words">
         <div>LEBO: Der revolutionäre KI-Tutor</div>
         <div>für Bestnoten in Mathe</div>
@@ -519,18 +531,19 @@ export default function LandingPage() {
         {renderCurrentSection()}
       </main>
 
-      {/* Navigation Controls */}
-      <div className="fixed bottom-20 left-1/2 transform -translate-x-1/2 z-10">
-        <div className="flex items-center gap-2 terminal-border p-2 bg-black/95 text-xs">
-          <Button 
-            onClick={prevSection} 
-            disabled={currentSection === 0}
-            className="terminal-button font-mono text-xs px-2 py-1 h-8"
-            variant="outline"
-            size="sm"
-          >
-            $ PREV
-          </Button>
+      {/* Navigation Controls - Hidden on first section */}
+      {currentSection > 0 && (
+        <div className="fixed bottom-20 left-1/2 transform -translate-x-1/2 z-10">
+          <div className="flex items-center gap-2 terminal-border p-2 bg-black/95 text-xs">
+            <Button 
+              onClick={prevSection} 
+              disabled={currentSection === 0}
+              className="terminal-button font-mono text-xs px-2 py-1 h-8"
+              variant="outline"
+              size="sm"
+            >
+              $ PREV
+            </Button>
           
           <div className="flex gap-1">
             {Array.from({ length: 7 }, (_, i) => (
@@ -557,6 +570,7 @@ export default function LandingPage() {
           </Button>
         </div>
       </div>
+      )}
 
       {/* Footer */}
       <footer className="fixed bottom-0 left-0 right-0 bg-black/95 border-t border-green-500/30 py-3 z-5">
@@ -564,7 +578,7 @@ export default function LandingPage() {
           <div className="text-center">
             <h3 className="text-sm font-bold mb-1 terminal-text font-mono">LEBO</h3>
             <p className="text-muted-foreground text-xs font-mono">
-              Der revolutionäre KI-Tutor für Bestnoten in Mathe
+              Made with love by Ji4min9. © 2025
             </p>
           </div>
         </div>
