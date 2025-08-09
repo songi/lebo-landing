@@ -186,16 +186,14 @@ export default function LandingPage() {
           <section className="py-12 lg:py-4">
             <div className="container mx-auto px-4 lg:px-8">
               <div className="max-w-4xl mx-auto">
-                <div className="terminal-border p-4 mb-8 text-left">
+                <div className="terminal-card p-8 mb-6">
                   <h2 className="text-lg font-bold mb-4 terminal-text font-mono leading-relaxed">
                     $ ERROR_ANALYSIS: Das Mathe-Abitur Protokoll
                   </h2>
-                  <div className="terminal-text-secondary font-mono text-lg leading-relaxed">
+                  <div className="terminal-text-secondary font-mono text-lg leading-relaxed mb-6">
                     [WARNING] Massive Lernherausforderung erkannt...
                   </div>
-                </div>
-                
-                <div className="terminal-card p-8 mb-6">
+                  
                   <div className="terminal-text font-mono text-lg leading-relaxed mb-6">
                     <span className="text-red-400">[ERROR_001]:</span> Jedes Jahr stehen Tausende von Schülerinnen und Schülern in Deutschland vor derselben gewaltigen Herausforderung: dem Mathematik-Abitur. Die Vorbereitung ist oft ein chaotischer Prozess, geprägt von stapelweise Büchern, endlosen Übungsaufgaben und dem nagenden Gefühl, nicht zu wissen, wo man überhaupt anfangen soll.
                   </div>
@@ -218,7 +216,7 @@ export default function LandingPage() {
           <section className="py-12 lg:py-4">
             <div className="container mx-auto px-4 lg:px-8">
               <div className="max-w-4xl mx-auto mb-8">
-                <div className="terminal-border p-6 mb-8 text-left">
+                <div className="terminal-card p-6 mb-8">
                   <div className="terminal-text font-mono text-sm mb-2">$ searching_for_solution.exe...</div>
                   <div className="terminal-text font-mono text-sm mb-4">$ found: BETTER_LEARNING_PROTOCOL.ai</div>
                   <h2 className="text-lg font-bold mb-6 terminal-text">
@@ -255,16 +253,15 @@ export default function LandingPage() {
             <div className="container mx-auto px-4 lg:px-8">
               <div className="max-w-4xl mx-auto">
                 <div className="text-center mb-12">
-                  <div className="terminal-border p-4 mb-6 text-left">
-                    <div className="terminal-text font-mono text-sm">$ loading_core_principle.dll...</div>
-                    <div className="terminal-text font-mono text-sm">$ STATUS: READY</div>
-                  </div>
                   <h2 className="text-3xl md:text-4xl font-bold mb-6 terminal-text font-mono">
                     Das Kernprinzip: Lernen, was wirklich zählt
                   </h2>
                 </div>
 
                 <div className="terminal-card p-8 hover:shadow-lg transition-all duration-300">
+                  <div className="terminal-text font-mono text-sm mb-2">$ loading_core_principle.dll...</div>
+                  <div className="terminal-text font-mono text-sm mb-6">$ STATUS: READY</div>
+                  
                   <div className="terminal-text font-mono text-lg leading-relaxed mb-4">
                     <span className="text-purple-400">PHILOSOPHIE.init()</span> = "Zeit ist zu wertvoll für irrelevante Inhalte"
                   </div>
@@ -364,83 +361,84 @@ export default function LandingPage() {
           <section className="py-12 lg:py-16">
             <div className="container mx-auto px-4 lg:px-8">
               <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                {/* <div className="terminal-border p-4 mb-6 text-left">
+                  <div className="terminal-text font-mono text-sm">$ loading_benefits_analysis.exe...</div>
+                  <div className="terminal-text font-mono text-sm">$ STATUS: READY</div>
+                </div> */}
+                <h2 className="text-3xl md:text-4xl font-bold mb-6 terminal-text font-mono">
                   Ihr Nutzen auf einen Blick
                 </h2>
+                <p className="text-lg terminal-text-secondary font-mono">
+                  // Maximieren Sie Ihren Lernerfolg mit LEBO
+                </p>
               </div>
 
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-                <Card className="hover:shadow-lg transition-all duration-300 hover:scale-[1.02]">
-                  <CardHeader>
-                    <Clock className="h-8 w-8 text-primary mb-2" />
-                    <CardTitle>Maximale Effizienz</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground">
-                      Sie lernen nur das, was Sie für Ihre Prüfung wirklich brauchen und was Ihnen die meisten Punkte bringt.
-                    </p>
-                  </CardContent>
-                </Card>
+                <div className="terminal-card hover:shadow-lg transition-all duration-300 hover:scale-[1.02] p-6">
+                  <div className="flex items-center gap-3 mb-4">
+                    <Clock className="h-8 w-8 text-green-400" />
+                    <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                  </div>
+                  <h3 className="text-xl font-bold mb-4 terminal-text font-mono">Maximale Effizienz</h3>
+                  <p className="terminal-text font-mono text-sm leading-relaxed">
+                    <span className="text-cyan-400">[OPTIMIZATION]:</span> Sie lernen nur das, was Sie für Ihre Prüfung wirklich brauchen und was Ihnen die meisten Punkte bringt.
+                  </p>
+                </div>
 
-                <Card className="hover:shadow-lg transition-all duration-300 hover:scale-[1.02]">
-                  <CardHeader>
-                    <Target className="h-8 w-8 text-primary mb-2" />
-                    <CardTitle>Gezielte Förderung</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground">
-                      Schluss mit der Suche nach den eigenen Schwächen – das System findet und schließt sie für Sie.
-                    </p>
-                  </CardContent>
-                </Card>
+                <div className="terminal-card hover:shadow-lg transition-all duration-300 hover:scale-[1.02] p-6">
+                  <div className="flex items-center gap-3 mb-4">
+                    <Target className="h-8 w-8 text-green-400" />
+                    <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                  </div>
+                  <h3 className="text-xl font-bold mb-4 terminal-text font-mono">Gezielte Förderung</h3>
+                  <p className="terminal-text font-mono text-sm leading-relaxed">
+                    <span className="text-blue-400">[TARGET_MODE]:</span> Schluss mit der Suche nach den eigenen Schwächen – das System findet und schließt sie für Sie.
+                  </p>
+                </div>
 
-                <Card className="hover:shadow-lg transition-all duration-300 hover:scale-[1.02]">
-                  <CardHeader>
-                    <TrendingUp className="h-8 w-8 text-primary mb-2" />
-                    <CardTitle>Motivation durch Meisterschaft</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground">
-                      Statt Frustration erleben Sie kontinuierliche, sichtbare Fortschritte, was die Lernmotivation entscheidend steigert.
-                    </p>
-                  </CardContent>
-                </Card>
+                <div className="terminal-card hover:shadow-lg transition-all duration-300 hover:scale-[1.02] p-6">
+                  <div className="flex items-center gap-3 mb-4">
+                    <TrendingUp className="h-8 w-8 text-green-400" />
+                    <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                  </div>
+                  <h3 className="text-xl font-bold mb-4 terminal-text font-mono">Motivation durch Meisterschaft</h3>
+                  <p className="terminal-text font-mono text-sm leading-relaxed">
+                    <span className="text-purple-400">[PROGRESS]:</span> Statt Frustration erleben Sie kontinuierliche, sichtbare Fortschritte, was die Lernmotivation entscheidend steigert.
+                  </p>
+                </div>
 
-                <Card className="hover:shadow-lg transition-all duration-300 hover:scale-[1.02]">
-                  <CardHeader>
-                    <Zap className="h-8 w-8 text-primary mb-2" />
-                    <CardTitle>Flexibilität und Kontrolle</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground">
-                      Lernen Sie wann und wo Sie wollen, in Ihrem eigenen Tempo, aber immer auf dem optimalen Weg.
-                    </p>
-                  </CardContent>
-                </Card>
+                <div className="terminal-card hover:shadow-lg transition-all duration-300 hover:scale-[1.02] p-6">
+                  <div className="flex items-center gap-3 mb-4">
+                    <Zap className="h-8 w-8 text-green-400" />
+                    <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                  </div>
+                  <h3 className="text-xl font-bold mb-4 terminal-text font-mono">Flexibilität und Kontrolle</h3>
+                  <p className="terminal-text font-mono text-sm leading-relaxed">
+                    <span className="text-orange-400">[ADAPTIVE]:</span> Lernen Sie wann und wo Sie wollen, in Ihrem eigenen Tempo, aber immer auf dem optimalen Weg.
+                  </p>
+                </div>
 
-                <Card className="hover:shadow-lg transition-all duration-300 hover:scale-[1.02]">
-                  <CardHeader>
-                    <Award className="h-8 w-8 text-primary mb-2" />
-                    <CardTitle>Sicherheit für den Prüfungstag</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground">
-                      Sie gehen mit dem Vertrauen ins Abitur, bestens auf alle relevanten Themen vorbereitet zu sein.
-                    </p>
-                  </CardContent>
-                </Card>
+                <div className="terminal-card hover:shadow-lg transition-all duration-300 hover:scale-[1.02] p-6">
+                  <div className="flex items-center gap-3 mb-4">
+                    <Award className="h-8 w-8 text-green-400" />
+                    <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                  </div>
+                  <h3 className="text-xl font-bold mb-4 terminal-text font-mono">Sicherheit für den Prüfungstag</h3>
+                  <p className="terminal-text font-mono text-sm leading-relaxed">
+                    <span className="text-pink-400">[CONFIDENCE]:</span> Sie gehen mit dem Vertrauen ins Abitur, bestens auf alle relevanten Themen vorbereitet zu sein.
+                  </p>
+                </div>
 
-                <Card className="hover:shadow-lg transition-all duration-300 hover:scale-[1.02]">
-                  <CardHeader>
-                    <Users className="h-8 w-8 text-primary mb-2" />
-                    <CardTitle>Persönlicher Tutor</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground">
-                      24/7 verfügbarer, intelligenter Tutor, der sich perfekt an Ihren Lernstil anpasst.
-                    </p>
-                  </CardContent>
-                </Card>
+                <div className="terminal-card hover:shadow-lg transition-all duration-300 hover:scale-[1.02] p-6">
+                  <div className="flex items-center gap-3 mb-4">
+                    <Users className="h-8 w-8 text-green-400" />
+                    <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                  </div>
+                  <h3 className="text-xl font-bold mb-4 terminal-text font-mono">Persönlicher Tutor</h3>
+                  <p className="terminal-text font-mono text-sm leading-relaxed">
+                    <span className="text-yellow-400">[AI_TUTOR]:</span> 24/7 verfügbarer, intelligenter Tutor, der sich perfekt an Ihren Lernstil anpasst.
+                  </p>
+                </div>
               </div>
             </div>
           </section>
@@ -450,27 +448,33 @@ export default function LandingPage() {
         return (
           <section className="py-12 lg:py-16">
             <div className="container mx-auto px-4 lg:px-8">
-              <div className="max-w-4xl mx-auto text-center">
-                <h2 className="text-3xl md:text-4xl font-bold mb-8">
-                  Die Zukunft der Prüfungsvorbereitung
-                </h2>
+              <div className="max-w-4xl mx-auto">
+                <div className="text-center mb-12">
+                  {/* <div className="terminal-border p-4 mb-6 text-left">
+                    <div className="terminal-text font-mono text-sm">$ loading_future_protocol.exe...</div>
+                    <div className="terminal-text font-mono text-sm">$ STATUS: READY</div>
+                  </div> */}
+                  <h2 className="text-3xl md:text-4xl font-bold mb-8 terminal-text font-mono">
+                    Die Zukunft der Prüfungsvorbereitung
+                  </h2>
+                </div>
                 
-                <div className="prose prose-lg prose-invert max-w-none mb-12">
-                  <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                    Das Mathe-Abitur muss keine Zeit der Angst und des Stresses sein. Es kann eine Zeit des fokussierten Wachstums und der Selbstbestätigung werden. Mit LEBO geben wir Schülern ein Werkzeug an die Hand, das sie befähigt, ihr volles Potenzial zu entfalten.
-                  </p>
+                <div className="terminal-card p-8 mb-12">
+                  <div className="terminal-text font-mono text-lg leading-relaxed mb-6">
+                    <span className="text-green-400">[VISION]:</span> Das Mathe-Abitur muss keine Zeit der Angst und des Stresses sein. Es kann eine Zeit des fokussierten Wachstums und der Selbstbestätigung werden. Mit LEBO geben wir Schülern ein Werkzeug an die Hand, das sie befähigt, ihr volles Potenzial zu entfalten.
+                  </div>
                   
-                  <p className="text-lg text-muted-foreground leading-relaxed">
-                    Wir glauben, dass die Zukunft des Lernens persönlich, datengestützt und motivierend ist. Treten Sie ein in eine neue Ära der Abiturvorbereitung.
-                  </p>
+                  <div className="terminal-text font-mono text-lg leading-relaxed">
+                    <span className="text-blue-400">[FUTURE_STATE]:</span> Wir glauben, dass die Zukunft des Lernens persönlich, datengestützt und motivierend ist. Treten Sie ein in eine neue Ära der Abiturvorbereitung.
+                  </div>
                 </div>
 
-                <div className="bg-gradient-to-r from-primary/20 to-secondary/20 p-8 rounded-lg">
-                  <h3 className="text-2xl font-bold mb-4">
-                    Bereit für Ihren persönlichen Weg zur Bestnote mit LEBO?
+                <div className="terminal-card p-8 text-center">
+                  <h3 className="text-2xl font-bold mb-4 terminal-text font-mono">
+                    <span className="text-purple-400">[CALL_TO_ACTION]:</span> Bereit für Ihren persönlichen Weg zur Bestnote mit LEBO?
                   </h3>
-                  <Button size="lg" className="text-lg px-8">
-                    Jetzt kostenlos starten
+                  <Button size="lg" className="text-lg px-8 terminal-button font-mono">
+                    $ JETZT_KOSTENLOS_STARTEN.exe
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                 </div>
