@@ -8,207 +8,246 @@ import { ArrowRight, Brain, Target, Zap, TrendingUp, Clock, Award, Users } from 
 
 export default function LandingPage() {
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      {/* Hero Section */}
-      <section className="relative overflow-hidden py-20 lg:py-32">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="text-center max-w-4xl mx-auto">
-            <Badge variant="secondary" className="mb-6 text-sm font-medium">
-              🚀 Revolutionäre KI-Technologie
-            </Badge>
-            
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 gradient-text animate-fade-in-up">
-              LEBO: Der revolutionäre KI-Tutor für Bestnoten in Mathe
-            </h1>
-            
-            <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              Die weltweit erste intelligente Lernplattform, die mit dir wächst und dich zum Abitur-Erfolg führt
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="text-lg px-8">
-                Jetzt kostenlos starten
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-              <Button variant="outline" size="lg" className="text-lg px-8">
-                Demo ansehen
-              </Button>
+    <div className="min-h-screen bg-background text-foreground relative">
+      {/* Terminal Header */}
+      <div className="terminal-border mx-4 mt-4 p-2 mb-8">
+        <div className="flex items-center gap-2 mb-2">
+          <div className="w-3 h-3 rounded-full bg-red-500"></div>
+          <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+          <div className="w-3 h-3 rounded-full bg-green-500"></div>
+          <span className="ml-4 text-sm terminal-text font-mono">LEBO_TERMINAL v2.0.1 - KI_TUTOR_SYSTEM</span>
+        </div>
+        <div className="h-px bg-gradient-to-r from-transparent via-green-500 to-transparent"></div>
+      </div>
+
+      <main className="relative z-2">
+        {/* Hero Section */}
+        <section className="relative overflow-hidden py-20 lg:py-32">
+          <div className="container mx-auto px-4 lg:px-8">
+            <div className="text-center max-w-4xl mx-auto">
+              <div className="terminal-border p-4 mb-8 text-left">
+                <div className="terminal-text text-sm mb-2">$ initializing_lebo_system...</div>
+                <div className="terminal-text text-sm mb-4">$ loading_ki_tutor_protocol... [████████████████████] 100%</div>
+              </div>
+              
+              <Badge variant="secondary" className="mb-6 text-sm font-mono terminal-border px-4 py-2 bg-black border-green-500">
+                <Zap className="mr-2 h-4 w-4" />
+                REVOLUTIONÄRE_KI_TECHNOLOGIE.exe
+              </Badge>
+              
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 gradient-text terminal-typing font-mono">
+                LEBO: Der revolutionäre KI-Tutor für Bestnoten in Mathe
+              </h1>
+              
+              <div className="terminal-border p-6 mb-8 bg-black/50 text-left">
+                <p className="text-xl md:text-2xl terminal-text mb-4 font-mono">
+                  {`> Die weltweit erste intelligente Lernplattform,`}
+                </p>
+                <p className="text-xl md:text-2xl terminal-text font-mono terminal-cursor">
+                  {`> die mit dir wächst und dich zum Abitur-Erfolg führt`}
+                </p>
+              </div>
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button size="lg" className="text-lg px-8 terminal-button font-mono">
+                  $ START_LEARNING_PROTOCOL
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+                <Button variant="outline" size="lg" className="text-lg px-8 terminal-button font-mono">
+                  $ EXECUTE_DEMO.sh
+                </Button>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <Separator />
+        <Separator />
 
-      {/* Problem Section */}
-      <section className="py-20 lg:py-32">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-              Das Mathe-Abitur: Eine riesige Herausforderung
-            </h2>
-            
-            <div className="prose prose-lg prose-invert max-w-none">
-              <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                Jedes Jahr stehen Tausende von Schülerinnen und Schülern in Deutschland vor derselben gewaltigen Herausforderung: dem Mathematik-Abitur. Die Vorbereitung ist oft ein chaotischer Prozess, geprägt von stapelweise Büchern, endlosen Übungsaufgaben und dem nagenden Gefühl, nicht zu wissen, wo man überhaupt anfangen soll.
-              </p>
+        {/* Problem Section */}
+        <section className="py-20 lg:py-32">
+          <div className="container mx-auto px-4 lg:px-8">
+            <div className="max-w-4xl mx-auto">
+              <div className="terminal-border p-4 mb-8">
+                <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 terminal-text font-mono">
+                  $ ERROR_ANALYSIS: Das Mathe-Abitur Protokoll
+                </h2>
+                <div className="text-center terminal-text-secondary font-mono">
+                  [WARNING] Massive Lernherausforderung erkannt...
+                </div>
+              </div>
               
-              <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                Man verbringt Stunden damit, Themen zu wiederholen, die man bereits beherrscht, während die wirklichen Wissenslücken unentdeckt bleiben und am Prüfungstag zur bösen Überraschung werden.
-              </p>
-              
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Das traditionelle Lernen mit der Gießkanne – alles für alle – ist ineffizient, demotivierend und respektiert nicht die individuelle Lerngeschwindigkeit und den Kenntnisstand jedes Einzelnen.
-              </p>
+              <div className="terminal-card p-8 mb-6">
+                <div className="terminal-text font-mono text-lg leading-relaxed mb-6">
+                  <span className="text-red-400">[ERROR_001]:</span> Jedes Jahr stehen Tausende von Schülerinnen und Schülern in Deutschland vor derselben gewaltigen Herausforderung: dem Mathematik-Abitur. Die Vorbereitung ist oft ein chaotischer Prozess, geprägt von stapelweise Büchern, endlosen Übungsaufgaben und dem nagenden Gefühl, nicht zu wissen, wo man überhaupt anfangen soll.
+                </div>
+                
+                <div className="terminal-text font-mono text-lg leading-relaxed mb-6">
+                  <span className="text-yellow-400">[WARNING_002]:</span> Man verbringt Stunden damit, Themen zu wiederholen, die man bereits beherrscht, während die wirklichen Wissenslücken unentdeckt bleiben und am Prüfungstag zur bösen Überraschung werden.
+                </div>
+                
+                <div className="terminal-text font-mono text-lg leading-relaxed">
+                  <span className="text-red-400">[CRITICAL_003]:</span> Das traditionelle Lernen mit der Gießkanne – alles für alle – ist ineffizient, demotivierend und respektiert nicht die individuelle Lerngeschwindigkeit und den Kenntnisstand jedes Einzelnen.
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      <Separator />
+        </section>      <Separator />
 
       {/* Solution Section */}
-      <section className="py-20 lg:py-32">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Was wäre, wenn es einen besseren Weg gäbe?
-            </h2>
-            <p className="text-lg text-muted-foreground">
-              Wenn eine Technologie nicht nur Ihren aktuellen Wissensstand versteht, sondern auch vorhersagen kann, was Sie als Nächstes lernen müssen, um Ihre Note in minimaler Zeit maximal zu verbessern?
-            </p>
-          </div>
+        <Separator />
 
-          <div className="text-center mb-12">
-            <Badge variant="secondary" className="text-lg px-6 py-2">
-              <Brain className="mr-2 h-5 w-5" />
-              Genau hier setzen wir an
-            </Badge>
-          </div>
+        {/* Solution Section */}
+        <section className="py-20 lg:py-32">
+          <div className="container mx-auto px-4 lg:px-8">
+            <div className="max-w-4xl mx-auto text-center mb-16">
+              <div className="terminal-border p-6 mb-8">
+                <div className="terminal-text font-mono text-sm mb-2">$ searching_for_solution.exe...</div>
+                <div className="terminal-text font-mono text-sm mb-4">$ found: BETTER_LEARNING_PROTOCOL.ai</div>
+                <h2 className="text-3xl md:text-4xl font-bold mb-6 terminal-text">
+                  Was wäre, wenn es einen besseren Weg gäbe?
+                </h2>
+                <p className="text-lg terminal-text-secondary font-mono">
+                  IF (technologie.verstehen(wissensstand) AND technologie.vorhersagen(next_learning_step)) 
+                  THEN note.verbessern(maximal, minimal_time);
+                </p>
+              </div>
+            </div>
 
-          <div className="max-w-4xl mx-auto">
-            <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-              Wir stellen LEBO vor, eine revolutionäre, KI-gestützte Lernplattform, die die Abiturvorbereitung in Mathematik von Grund auf neu denkt. Unser Ziel: Weg vom frustrierenden Rätselraten, hin zur maßgeschneiderten Präzisionsförderung für jeden einzelnen Schüler.
-            </p>
-          </div>
-        </div>
-      </section>
+            <div className="text-center mb-12">
+              <Badge variant="secondary" className="text-lg px-6 py-2 terminal-border bg-black border-green-500">
+                <Brain className="mr-2 h-5 w-5 terminal-text" />
+                <span className="terminal-text font-mono">SOLUTION_FOUND: LEBO.exe</span>
+              </Badge>
+            </div>
 
-      <Separator />
+            <div className="max-w-4xl mx-auto">
+              <div className="terminal-card p-8">
+                <div className="terminal-text font-mono text-lg leading-relaxed mb-4">
+                  <span className="text-green-400">[SYSTEM_INIT]:</span> Wir stellen LEBO vor, eine revolutionäre, KI-gestützte Lernplattform, die die Abiturvorbereitung in Mathematik von Grund auf neu denkt.
+                </div>
+                <div className="terminal-text font-mono text-lg leading-relaxed">
+                  <span className="text-blue-400">[MISSION]:</span> Weg vom frustrierenden Rätselraten, hin zur maßgeschneiderten Präzisionsförderung für jeden einzelnen Schüler.
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>      <Separator />
 
       {/* Core Principle Section */}
-      <section className="py-20 lg:py-32">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="max-w-4xl mx-auto">
+        <Separator />
+
+        {/* Core Principle Section */}
+        <section className="py-20 lg:py-32">
+          <div className="container mx-auto px-4 lg:px-8">
+            <div className="max-w-4xl mx-auto">
+              <div className="text-center mb-16">
+                <div className="terminal-border p-4 mb-6">
+                  <div className="terminal-text font-mono text-sm">$ loading_core_principle.dll...</div>
+                  <div className="terminal-text font-mono text-sm">$ STATUS: READY</div>
+                </div>
+                <h2 className="text-3xl md:text-4xl font-bold mb-6 terminal-text font-mono">
+                  Das Kernprinzip: Lernen, was wirklich zählt
+                </h2>
+                <p className="text-lg terminal-text-secondary font-mono">
+                  PHILOSOPHIE.init() = "Zeit ist zu wertvoll für irrelevante Inhalte"
+                </p>
+              </div>
+
+              <div className="terminal-card p-8 hover:shadow-lg transition-all duration-300">
+                <div className="terminal-text font-mono text-lg leading-relaxed">
+                  <span className="text-cyan-400">[CORE_FUNCTION]:</span> Anstatt Ihnen einen riesigen Berg an Lernmaterial vorzusetzen, fungiert LEBO als Ihr persönlicher, digitaler Mathe-Tutor, der Sie intelligent und effizient durch die gesamte Abiturvorbereitung begleitet.
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>      <Separator />
+
+      {/* Three Steps Section */}
+        <Separator />
+
+        {/* Three Steps Section */}
+        <section className="py-20 lg:py-32">
+          <div className="container mx-auto px-4 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Das Kernprinzip: Lernen, was wirklich zählt
+              <div className="terminal-border p-4 mb-6">
+                <div className="terminal-text font-mono text-sm">$ executing_three_step_protocol.sh</div>
+                <div className="terminal-text font-mono text-sm">$ STATUS: [████████████████████] 100% LOADED</div>
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 terminal-text font-mono">
+                Der Prozess in drei Schritten
               </h2>
-              <p className="text-lg text-muted-foreground">
-                LEBO basiert auf einer einfachen, aber wirkungsvollen Philosophie: Ihre Zeit ist zu wertvoll, um sie mit irrelevanten Inhalten zu verschwenden.
+              <p className="text-lg terminal-text-secondary font-mono">
+                // Drei einfache, aber leistungsstarke Funktionen zu Ihrem Erfolg
               </p>
             </div>
 
-            <Card className="mb-8 hover:shadow-lg transition-all duration-300">
-              <CardContent className="p-8">
-                <p className="text-lg leading-relaxed">
-                  Anstatt Ihnen einen riesigen Berg an Lernmaterial vorzusetzen, fungiert LEBO als Ihr persönlicher, digitaler Mathe-Tutor, der Sie intelligent und effizient durch die gesamte Abiturvorbereitung begleitet.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      <Separator />
-
-      {/* Three Steps Section */}
-      <section className="py-20 lg:py-32">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Der Prozess in drei Schritten
-            </h2>
-            <p className="text-lg text-muted-foreground">
-              Drei einfache, aber leistungsstarke Schritte zu Ihrem Erfolg
-            </p>
-          </div>
-
-          <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {/* Step 1 */}
-            <Card className="relative hover:shadow-lg transition-all duration-300 hover:scale-[1.02]">
-              <CardHeader>
+            <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+              {/* Step 1 */}
+              <div className="terminal-card relative hover:shadow-lg transition-all duration-300 hover:scale-[1.02] p-6">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-lg">
-                    1
+                  <div className="w-10 h-10 rounded-full bg-green-500/20 border-2 border-green-500 text-green-400 flex items-center justify-center font-bold text-lg font-mono">
+                    01
                   </div>
-                  <Target className="h-6 w-6 text-primary" />
+                  <Target className="h-6 w-6 text-green-400" />
                 </div>
-                <CardTitle className="text-xl">Der smarte Start: Die präzise Wissensanalyse</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground leading-relaxed">
-                  Alles beginnt mit einem intelligenten Onboarding-Test. Dieser Test ist mehr als nur eine einfache Abfrage. Er wurde entwickelt, um ein detailliertes, mehrdimensionales Bild Ihrer mathematischen Fähigkeiten zu zeichnen.
-                </p>
-                <p className="text-muted-foreground leading-relaxed mt-4">
-                  In kürzester Zeit identifiziert das System nicht nur die Themenbereiche (wie Analysis, Stochastik oder Geometrie), in denen Sie Schwierigkeiten haben, sondern auch die spezifischen Konzepte innerhalb dieser Themen.
-                </p>
-              </CardContent>
-            </Card>
+                <h3 className="text-xl font-bold mb-4 terminal-text font-mono">
+                  STEP_01: Die präzise Wissensanalyse
+                </h3>
+                <div className="terminal-text font-mono text-sm leading-relaxed mb-4">
+                  <span className="text-blue-400">[INIT_TEST]:</span> Alles beginnt mit einem intelligenten Onboarding-Test. Dieser Test ist mehr als nur eine einfache Abfrage. Er wurde entwickelt, um ein detailliertes, mehrdimensionales Bild Ihrer mathematischen Fähigkeiten zu zeichnen.
+                </div>
+                <div className="terminal-text font-mono text-sm leading-relaxed">
+                  <span className="text-cyan-400">[ANALYSIS]:</span> In kürzester Zeit identifiziert das System nicht nur die Themenbereiche (wie Analysis, Stochastik oder Geometrie), sondern auch die spezifischen Konzepte innerhalb dieser Themen.
+                </div>
+              </div>
 
-            {/* Step 2 */}
-            <Card className="relative hover:shadow-lg transition-all duration-300 hover:scale-[1.02]">
-              <CardHeader>
+              {/* Step 2 */}
+              <div className="terminal-card relative hover:shadow-lg transition-all duration-300 hover:scale-[1.02] p-6">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-lg">
-                    2
+                  <div className="w-10 h-10 rounded-full bg-green-500/20 border-2 border-green-500 text-green-400 flex items-center justify-center font-bold text-lg font-mono">
+                    02
                   </div>
-                  <TrendingUp className="h-6 w-6 text-primary" />
+                  <TrendingUp className="h-6 w-6 text-green-400" />
                 </div>
-                <CardTitle className="text-xl">Ihr persönlicher Weg zum Erfolg: Der dynamische Lernplan</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground leading-relaxed">
-                  Basierend auf den Ergebnissen der Analyse erstellt die KI von LEBO Ihren ganz persönlichen Lernplan. Dieser Plan ist keine starre Liste von Aufgaben. Er ist eine dynamische Roadmap, die sich auf die Bereiche konzentriert, die den größten Einfluss auf Ihre Note haben werden.
-                </p>
+                <h3 className="text-xl font-bold mb-4 terminal-text font-mono">
+                  STEP_02: Der dynamische Lernplan
+                </h3>
+                <div className="terminal-text font-mono text-sm leading-relaxed mb-4">
+                  <span className="text-purple-400">[PLAN_GEN]:</span> Basierend auf den Ergebnissen der Analyse erstellt die KI von LEBO Ihren ganz persönlichen Lernplan. Dieser Plan ist keine starre Liste von Aufgaben. Er ist eine dynamische Roadmap.
+                </div>
                 <div className="mt-4 space-y-2">
                   <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-primary rounded-full"></div>
-                    <span className="text-sm text-muted-foreground">Schwächen gezielt stärken</span>
+                    <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                    <span className="text-sm terminal-text font-mono">weakness.strengthen()</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-primary rounded-full"></div>
-                    <span className="text-sm text-muted-foreground">Stärken intelligent festigen</span>
+                    <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                    <span className="text-sm terminal-text font-mono">strength.solidify()</span>
                   </div>
                 </div>
-              </CardContent>
-            </Card>
+              </div>
 
-            {/* Step 3 */}
-            <Card className="relative hover:shadow-lg transition-all duration-300 hover:scale-[1.02]">
-              <CardHeader>
+              {/* Step 3 */}
+              <div className="terminal-card relative hover:shadow-lg transition-all duration-300 hover:scale-[1.02] p-6">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-lg">
-                    3
+                  <div className="w-10 h-10 rounded-full bg-green-500/20 border-2 border-green-500 text-green-400 flex items-center justify-center font-bold text-lg font-mono">
+                    03
                   </div>
-                  <Zap className="h-6 w-6 text-primary" />
+                  <Zap className="h-6 w-6 text-green-400" />
                 </div>
-                <CardTitle className="text-xl">Lernen, das mitdenkt: Intelligente Anpassung in Echtzeit</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground leading-relaxed">
-                  Das ist die wahre Magie von LEBO. Während Sie lernen, Aufgaben lösen und mit den Inhalten interagieren, beobachtet und analysiert die KI von LEBO permanent Ihren Fortschritt.
-                </p>
-                <p className="text-muted-foreground leading-relaxed mt-4">
-                  Stellen Sie sich einen persönlichen Tutor vor, der Ihnen 24/7 über die Schulter schaut, Ihre Denkmuster versteht und den Unterricht sofort anpasst.
-                </p>
-              </CardContent>
-            </Card>
+                <h3 className="text-xl font-bold mb-4 terminal-text font-mono">
+                  STEP_03: Intelligente Anpassung in Echtzeit
+                </h3>
+                <div className="terminal-text font-mono text-sm leading-relaxed mb-4">
+                  <span className="text-orange-400">[REAL_TIME]:</span> Das ist die wahre Magie von LEBO. Während Sie lernen, beobachtet und analysiert die KI permanent Ihren Fortschritt.
+                </div>
+                <div className="terminal-text font-mono text-sm leading-relaxed">
+                  <span className="text-pink-400">[AI_TUTOR]:</span> Stellen Sie sich einen persönlichen Tutor vor, der Ihnen 24/7 über die Schulter schaut, Ihre Denkmuster versteht und den Unterricht sofort anpasst.
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
-
-      <Separator />
+        </section>      <Separator />
 
       {/* Technology Section */}
       <section className="py-20 lg:py-32">
@@ -358,6 +397,8 @@ export default function LandingPage() {
           </div>
         </div>
       </section>
+
+      </main>
 
       {/* Footer */}
       <footer className="border-t py-12">
