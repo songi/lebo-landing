@@ -150,13 +150,13 @@ export default function LandingPage() {
         {/* Terminal Header */}
         <div className="absolute top-4 left-4 right-4">
           <div className="terminal-border p-2">
-            <div className="flex items-center gap-2 mb-2">
+            <div className="flex items-center gap-2">
               <div className="w-3 h-3 rounded-full bg-red-500"></div>
               <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
               <div className="w-3 h-3 rounded-full bg-green-500"></div>
               <span className="ml-4 text-sm terminal-text font-mono">LEBO_TERMINAL v2.0.1 - KI_TUTOR_SYSTEM</span>
             </div>
-            <div className="h-px bg-gradient-to-r from-transparent via-green-500 to-transparent"></div>
+            {/* <div className="h-px bg-gradient-to-r from-transparent via-green-500 to-transparent"></div> */}
           </div>
         </div>
 
@@ -502,18 +502,20 @@ export default function LandingPage() {
 
   return (
     <div className="min-h-screen bg-background text-foreground relative animate-fade-in-up">
-      {/* Terminal Header */}
-      <div className="terminal-border mx-4 mt-2 p-2 mb-4">
-        <div className="flex items-center gap-2 mb-2">
-          <div className="w-3 h-3 rounded-full bg-red-500"></div>
-          <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-          <div className="w-3 h-3 rounded-full bg-green-500"></div>
-          <span className="ml-4 text-sm terminal-text font-mono">LEBO_TERMINAL v2.0.1 - KI_TUTOR_SYSTEM</span>
+      {/* Fixed Terminal Header */}
+      <div className="fixed top-0 left-0 right-0 bg-black/95 border-green-500/30 py-2 z-5">
+        <div className="terminal-border mx-4 p-2">
+          <div className="flex items-center gap-2">
+            <div className="w-3 h-3 rounded-full bg-red-500"></div>
+            <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+            <div className="w-3 h-3 rounded-full bg-green-500"></div>
+            <span className="ml-4 text-sm terminal-text font-mono">LEBO_TERMINAL v2.0.1 - KI_TUTOR_SYSTEM</span>
+          </div>
+          {/* <div className="h-px bg-gradient-to-r from-transparent via-green-500 to-transparent"></div> */}
         </div>
-        <div className="h-px bg-gradient-to-r from-transparent via-green-500 to-transparent"></div>
       </div>
 
-      <main className="relative z-2 pb-24">
+      <main className="relative z-2 pt-20 pb-24">
         {renderCurrentSection()}
       </main>
 
