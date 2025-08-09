@@ -122,14 +122,26 @@ export default function LandingPage() {
 
   const nextSection = () => {
     setCurrentSection(prev => Math.min(prev + 1, 6)); // 7 sections total (0-6)
+    // Scroll to top when changing sections with a small delay to ensure rendering is complete
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 50);
   };
 
   const prevSection = () => {
     setCurrentSection(prev => Math.max(prev - 1, 0));
+    // Scroll to top when changing sections with a small delay to ensure rendering is complete
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 50);
   };
 
   const goToSection = (sectionIndex: number) => {
     setCurrentSection(sectionIndex);
+    // Scroll to top when changing sections with a small delay to ensure rendering is complete
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 50);
   };
 
   if (!showMainContent) {
