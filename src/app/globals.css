@@ -427,6 +427,28 @@
   animation: scan-line 3s linear infinite;
 }
 
+/* Disable scan line for three steps section cards */
+.three-steps-section .terminal-card::before {
+  display: none;
+}
+
+/* Add scan line effect to the entire three steps section */
+.three-steps-section {
+  position: relative;
+}
+
+.three-steps-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0, 255, 0, 0.8), transparent);
+  animation: scan-line 4s linear infinite;
+  z-index: 1;
+}
+
 .terminal-card:hover {
   border-color: rgba(0, 255, 0, 0.8);
   box-shadow: 

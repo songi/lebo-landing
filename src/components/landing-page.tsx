@@ -279,13 +279,9 @@ export default function LandingPage() {
 
       case 4: // Three Steps Section
         return (
-          <section className="py-12 lg:py-16">
+          <section className="py-12 lg:py-16 three-steps-section">
             <div className="container mx-auto px-4 lg:px-8">
               <div className="text-center mb-12">
-                <div className="terminal-border p-4 mb-6 text-left">
-                  <div className="terminal-text font-mono text-sm">$ executing_three_step_protocol.sh</div>
-                  <div className="terminal-text font-mono text-sm">$ STATUS: [████████████████████] 100% LOADED</div>
-                </div>
                 <h2 className="text-3xl md:text-4xl font-bold mb-6 terminal-text font-mono">
                   Der Prozess in drei Schritten
                 </h2>
