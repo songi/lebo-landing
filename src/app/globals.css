@@ -187,6 +187,45 @@
   }
 }
 
+@keyframes fast-typing-line1 {
+  0% { 
+    width: 0;
+    opacity: 1;
+  }
+  100% { 
+    width: 100%;
+    opacity: 1;
+  }
+}
+
+@keyframes fast-typing-line2 {
+  0%, 40% { 
+    width: 0;
+    opacity: 0;
+  }
+  41% {
+    opacity: 1;
+  }
+  100% { 
+    width: 100%;
+    opacity: 1;
+  }
+}
+
+@keyframes fast-typing-line3 {
+  0%, 70% { 
+    width: 0;
+    opacity: 0;
+  }
+  71% {
+    opacity: 1;
+  }
+  100% { 
+    width: 100%;
+    opacity: 1;
+  }
+}
+
 /* Terminal loading sequence animations */
 @keyframes terminal-reveal-line1 {
   0% { opacity: 0; width: 0; }
@@ -239,6 +278,24 @@
   overflow: hidden;
   white-space: nowrap;
   animation: typing 2s steps(40) 1s both;
+}
+
+.terminal-typing-fast-line1 {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: fast-typing-line1 1.5s steps(30) 0.5s both;
+}
+
+.terminal-typing-fast-line2 {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: fast-typing-line2 2.5s steps(35) 0.5s both;
+}
+
+.terminal-typing-fast-line3 {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: fast-typing-line3 3.2s steps(25) 0.5s both;
 }
 
 .terminal-loading-line1 {

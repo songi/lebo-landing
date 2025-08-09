@@ -77,10 +77,10 @@ function TerminalLoader({ onLoadingComplete }: { onLoadingComplete: () => void }
 function HeroContent() {
   return (
     <div className="animate-fade-in-up">
-      <Badge variant="secondary" className="mb-6 text-sm font-mono terminal-border px-4 py-2 bg-black border-green-500">
+      {/* <Badge variant="secondary" className="mb-6 text-sm font-mono terminal-border px-4 py-2 bg-black border-green-500">
         <Zap className="mr-2 h-4 w-4" />
         REVOLUTIONÄRE_KI_TECHNOLOGIE.exe
-      </Badge>
+      </Badge> */}
       
       <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight mb-6 gradient-text terminal-typing font-mono leading-tight break-words">
         <div>LEBO: Der revolutionäre KI-Tutor</div>
@@ -88,11 +88,14 @@ function HeroContent() {
       </h1>
       
       <div className="terminal-border p-6 mb-8 bg-black/50 text-left">
-        <p className="text-xl md:text-2xl terminal-text mb-4 font-mono">
+        <p className="text-xl md:text-2xl terminal-text mb-2 font-mono terminal-typing-fast-line1">
           {`> Die weltweit erste intelligente Lernplattform,`}
         </p>
-        <p className="text-xl md:text-2xl terminal-text font-mono terminal-cursor">
-          {`> die mit dir wächst und dich zum Abitur-Erfolg führt`}
+        <p className="text-xl md:text-2xl terminal-text mb-2 font-mono terminal-typing-fast-line2">
+          {`> die mit dir wächst und dich zum`}
+        </p>
+        <p className="text-xl md:text-2xl terminal-text font-mono terminal-typing-fast-line3">
+          {`> Abitur-Erfolg führt.`}
         </p>
       </div>
       
@@ -135,6 +138,16 @@ export default function LandingPage() {
         {/* Loading Screen */}
         <div className="container mx-auto px-4 lg:px-8">
           <div className="text-center max-w-6xl mx-auto">
+            {/* LEBO Sign */}
+            <div className="mb-12">
+              <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold gradient-text font-mono mb-4 terminal-flicker">
+                LEBO
+              </h1>
+              <div className="terminal-text-secondary font-mono text-lg md:text-xl">
+                KI-TUTOR_SYSTEM v2.0.1
+              </div>
+            </div>
+            
             <TerminalLoader onLoadingComplete={handleLoadingComplete} />
           </div>
         </div>
