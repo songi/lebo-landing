@@ -5,10 +5,145 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { ArrowRight, Brain, Target, Zap, TrendingUp, Clock, Award, Users } from "lucide-react";
+import { useState, useEffect } from "react";
+
+function TerminalLoader({ onLoadingComplete }: { onLoadingComplete: () => void }) {
+  const [progress, setProgress] = useState(0);
+  const [showProgress, setShowProgress] = useState(false);
+  const [loadingComplete, setLoadingComplete] = useState(false);
+
+  useEffect(() => {
+    // Start progress animation after 1 second
+    const timer1 = setTimeout(() => {
+      setShowProgress(true);
+    }, 1000);
+
+    // Animate progress from 0 to 100
+    const timer2 = setTimeout(() => {
+      const interval = setInterval(() => {
+        setProgress(prev => {
+          if (prev >= 100) {
+            clearInterval(interval);
+            setLoadingComplete(true);
+            // Wait 1 second after 100%, then trigger page reveal
+            setTimeout(() => {
+              onLoadingComplete();
+            }, 1000);
+            return 100;
+          }
+          // Simulate realistic loading with different speeds
+          if (prev < 20) return prev + 2;
+          if (prev < 60) return prev + 5;
+          if (prev < 90) return prev + 3;
+          return prev + 1;
+        });
+      }, 60);
+
+      return () => clearInterval(interval);
+    }, 1200);
+
+    return () => {
+      clearTimeout(timer1);
+      clearTimeout(timer2);
+    };
+  }, [onLoadingComplete]);
+
+  return (
+    <div className="terminal-border p-4 mb-8 text-left min-h-[120px] flex flex-col justify-center">
+      <div className="terminal-text text-sm mb-2 terminal-loading-line1">$ initializing_lebo_system...</div>
+      <div className="terminal-text text-sm mb-4 terminal-loading-line2 flex items-center">
+        <span>$ loading_ki_tutor_protocol...</span>
+        {showProgress && (
+          <>
+            <div className="terminal-progress-container ml-2">
+              <div 
+                className="terminal-progress-bar transition-all duration-75 ease-out"
+                style={{ width: `${progress}%` }}
+              ></div>
+            </div>
+            <span className="terminal-progress-text ml-2 min-w-[3rem]">{progress}%</span>
+          </>
+        )}
+      </div>
+      {loadingComplete && (
+        <div className="terminal-text text-sm text-green-400 animate-pulse">
+          $ system_ready - starting_lebo_interface...
+        </div>
+      )}
+    </div>
+  );
+}
+
+function HeroContent() {
+  return (
+    <div className="animate-fade-in-up">
+      <Badge variant="secondary" className="mb-6 text-sm font-mono terminal-border px-4 py-2 bg-black border-green-500">
+        <Zap className="mr-2 h-4 w-4" />
+        REVOLUTIONÄRE_KI_TECHNOLOGIE.exe
+      </Badge>
+      
+      <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight mb-6 gradient-text terminal-typing font-mono leading-tight break-words">
+        <div>LEBO: Der revolutionäre KI-Tutor</div>
+        <div>für Bestnoten in Mathe</div>
+      </h1>
+      
+      <div className="terminal-border p-6 mb-8 bg-black/50 text-left">
+        <p className="text-xl md:text-2xl terminal-text mb-4 font-mono">
+          {`> Die weltweit erste intelligente Lernplattform,`}
+        </p>
+        <p className="text-xl md:text-2xl terminal-text font-mono terminal-cursor">
+          {`> die mit dir wächst und dich zum Abitur-Erfolg führt`}
+        </p>
+      </div>
+      
+      <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <Button size="lg" className="text-lg px-8 terminal-button font-mono">
+          $ START_LEARNING_PROTOCOL
+          <ArrowRight className="ml-2 h-5 w-5" />
+        </Button>
+        <Button variant="outline" size="lg" className="text-lg px-8 terminal-button font-mono">
+          $ EXECUTE_DEMO.sh
+        </Button>
+      </div>
+    </div>
+  );
+}
 
 export default function LandingPage() {
+  const [showMainContent, setShowMainContent] = useState(false);
+
+  const handleLoadingComplete = () => {
+    setShowMainContent(true);
+  };
+
+  if (!showMainContent) {
+    return (
+      <div className="min-h-screen bg-background text-foreground relative flex items-center justify-center">
+        {/* Terminal Header */}
+        <div className="absolute top-4 left-4 right-4">
+          <div className="terminal-border p-2">
+            <div className="flex items-center gap-2 mb-2">
+              <div className="w-3 h-3 rounded-full bg-red-500"></div>
+              <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+              <div className="w-3 h-3 rounded-full bg-green-500"></div>
+              <span className="ml-4 text-sm terminal-text font-mono">LEBO_TERMINAL v2.0.1 - KI_TUTOR_SYSTEM</span>
+            </div>
+            <div className="h-px bg-gradient-to-r from-transparent via-green-500 to-transparent"></div>
+          </div>
+        </div>
+
+        {/* Loading Screen */}
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="text-center max-w-6xl mx-auto">
+            <TerminalLoader onLoadingComplete={handleLoadingComplete} />
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
-    <div className="min-h-screen bg-background text-foreground relative">
+    <div className="min-h-screen bg-background text-foreground relative animate-fade-in-up">
       {/* Terminal Header */}
       <div className="terminal-border mx-4 mt-4 p-2 mb-8">
         <div className="flex items-center gap-2 mb-2">
@@ -24,39 +159,8 @@ export default function LandingPage() {
         {/* Hero Section */}
         <section className="relative overflow-hidden py-20 lg:py-32">
           <div className="container mx-auto px-4 lg:px-8">
-            <div className="text-center max-w-4xl mx-auto">
-              <div className="terminal-border p-4 mb-8 text-left">
-                <div className="terminal-text text-sm mb-2">$ initializing_lebo_system...</div>
-                <div className="terminal-text text-sm mb-4">$ loading_ki_tutor_protocol... [████████████████████] 100%</div>
-              </div>
-              
-              <Badge variant="secondary" className="mb-6 text-sm font-mono terminal-border px-4 py-2 bg-black border-green-500">
-                <Zap className="mr-2 h-4 w-4" />
-                REVOLUTIONÄRE_KI_TECHNOLOGIE.exe
-              </Badge>
-              
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 gradient-text terminal-typing font-mono">
-                LEBO: Der revolutionäre KI-Tutor für Bestnoten in Mathe
-              </h1>
-              
-              <div className="terminal-border p-6 mb-8 bg-black/50 text-left">
-                <p className="text-xl md:text-2xl terminal-text mb-4 font-mono">
-                  {`> Die weltweit erste intelligente Lernplattform,`}
-                </p>
-                <p className="text-xl md:text-2xl terminal-text font-mono terminal-cursor">
-                  {`> die mit dir wächst und dich zum Abitur-Erfolg führt`}
-                </p>
-              </div>
-              
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="text-lg px-8 terminal-button font-mono">
-                  $ START_LEARNING_PROTOCOL
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-                <Button variant="outline" size="lg" className="text-lg px-8 terminal-button font-mono">
-                  $ EXECUTE_DEMO.sh
-                </Button>
-              </div>
+            <div className="text-center max-w-6xl mx-auto">
+              <HeroContent />
             </div>
           </div>
         </section>
@@ -169,7 +273,7 @@ export default function LandingPage() {
         <section className="py-20 lg:py-32">
           <div className="container mx-auto px-4 lg:px-8">
             <div className="text-center mb-16">
-              <div className="terminal-border p-4 mb-6">
+              <div className="terminal-border p-4 mb-6 text-left">
                 <div className="terminal-text font-mono text-sm">$ executing_three_step_protocol.sh</div>
                 <div className="terminal-text font-mono text-sm">$ STATUS: [████████████████████] 100% LOADED</div>
               </div>

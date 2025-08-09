@@ -187,6 +187,50 @@
   }
 }
 
+/* Terminal loading sequence animations */
+@keyframes terminal-reveal-line1 {
+  0% { opacity: 0; width: 0; }
+  10% { opacity: 1; }
+  100% { opacity: 1; width: 100%; }
+}
+
+@keyframes terminal-reveal-line2 {
+  0%, 30% { opacity: 0; width: 0; }
+  40% { opacity: 1; }
+  100% { opacity: 1; width: 100%; }
+}
+
+@keyframes progress-bar-fill {
+  0%, 30% { width: 0%; }
+  35% { width: 5%; }
+  40% { width: 15%; }
+  50% { width: 35%; }
+  60% { width: 55%; }
+  70% { width: 75%; }
+  80% { width: 85%; }
+  90% { width: 95%; }
+  100% { width: 100%; }
+}
+
+@keyframes progress-percentage {
+  0%, 30% { opacity: 0; }
+  35% { opacity: 1; }
+  35% { content: "5%"; }
+  40% { content: "15%"; }
+  50% { content: "35%"; }
+  60% { content: "55%"; }
+  70% { content: "75%"; }
+  80% { content: "85%"; }
+  90% { content: "95%"; }
+  100% { content: "100%"; }
+}
+
+@keyframes progress-text {
+  0%, 30% { opacity: 0; }
+  35% { opacity: 1; }
+  100% { opacity: 1; }
+}
+
 .animate-fade-in-up {
   animation: fade-in-up 0.6s ease-out;
 }
@@ -195,6 +239,40 @@
   overflow: hidden;
   white-space: nowrap;
   animation: typing 2s steps(40) 1s both;
+}
+
+.terminal-loading-line1 {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: terminal-reveal-line1 3s ease-out;
+}
+
+.terminal-loading-line2 {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: terminal-reveal-line2 4s ease-out;
+}
+
+.terminal-progress-container {
+  position: relative;
+  display: inline-block;
+  width: 200px;
+  height: 16px;
+  border: 1px solid rgba(0, 255, 0, 0.5);
+  background: rgba(0, 0, 0, 0.8);
+  margin: 0 8px;
+  vertical-align: middle;
+}
+
+.terminal-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #00ff00, #00cc00);
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.8);
+  animation: progress-bar-fill 4s ease-out;
+}
+
+.terminal-progress-text {
+  animation: progress-text 4s ease-out;
 }
 
 .terminal-cursor::after {
